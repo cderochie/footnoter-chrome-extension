@@ -1,0 +1,28 @@
+ {
+  "name": "Footnoter",
+  "version": "0",
+  "description": "Turn all article links into a footnotes",
+  "background": {
+    // "page": "background.html",
+     "scripts": ["background.js"],
+    "persistent": false
+    },
+  "manifest_version": 2,
+  "browser_action": {
+    "name": "Manipulate DOM",
+    // "icons": ["icon.png"],
+    "default_icon": {
+        "19": "icon19x19.png",
+        "38": "icon76x76.png"
+    }
+  },
+  "permissions": [
+    "activeTab",
+    "tabs"
+  ],
+  "content_scripts": [ {
+    "js": [ "jquery-2.1.1.min.js", "background.js" ],
+    "css": ["customStyles.css"],
+    "matches": [ "http://*/*", "https://*/*"]
+  }]
+}
